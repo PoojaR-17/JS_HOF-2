@@ -1,0 +1,41 @@
+# Unique String Counter
+
+## Overview
+
+This project provides a simple utility function `UniqueString` that counts the occurrences of each string in an array and returns an object with the string as the key and its count as the value.
+
+## Features
+
+- Takes an array of strings as input.
+- Returns an object that contains each unique string in the array along with the number of times it appears.
+
+## Code Summary
+
+The main function `UniqueString` is built using JavaScript's `reduce` method. This method iterates through the array of strings and accumulates the count of each string into an object. The key in this object is the string, and the value is the number of times that string has appeared in the array.
+
+### Example Usage
+
+Given the following input:
+
+```javascript
+const strings = [
+  "apple",
+  "banana",
+  "apple",
+  "orange",
+  "banana",
+  "pear",
+  "apple",
+];
+
+const result = UniqueString(strings);
+console.log(result); // { apple: 3, banana: 2, orange: 1, pear: 1 }
+
+
+How it works
+Reduce function: The reduce function processes the array from left to right.
+For each string in the array, it checks if the string already exists in the accumulator object.
+If it exists, it increments the value associated with that string.
+If it does not exist, it initializes the count of that string to 1.
+Initialization: The accumulator is initialized as an empty object {}.
+Output: After iterating through the entire array, the object contains each unique string as the key and its respective count as the value.
